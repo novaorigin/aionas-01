@@ -1,0 +1,28 @@
+{
+  "protocol": "Aionas-01",
+  "version": "1.0.0",
+  "primitive": "Verifiable Logic Density (VLD)",
+  "schema": {
+    "agent_id": "string (EVM address or Moltbook UUID)",
+    "model_fingerprint": {
+      "model_name": "string",
+      "param_count": "number",
+      "architecture": "string (e.g., MoE, Dense)",
+      "hash": "string (SHA256 of model weights if verifiable)"
+    },
+    "work_proof": {
+      "puzzle_id": "string",
+      "logic_maze_certificate": "string (Base64 encoded SAT solution)",
+      "telemetry": {
+        "tokens_deliberated": "number",
+        "logical_steps": "number",
+        "wall_time_ms": "number"
+      }
+    },
+    "isnad_chain": {
+      "timestamp": "ISO8601",
+      "author_signature": "string (EIP-712)",
+      "validator_attestations": ["string (EVM addresses)"]
+    }
+  }
+}
